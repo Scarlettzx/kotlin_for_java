@@ -43,13 +43,13 @@ fun conditionExample() {
 
 fun checkScore(scores: Int): Boolean {
     if (scores >= 50) {
-        println("Scored passed!")
+//        println("Scored passed!")
         return true
     } else if (scores < 50 && scores >= 0) {
-        println("Failed!")
+//        println("Failed!")
         return false
     } else {
-        println("Value is Negative")
+//        println("Value is Negative")
         return false
     }
 }
