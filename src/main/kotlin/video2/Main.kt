@@ -25,6 +25,71 @@ fun main() {
     operatorExample()
     // ? conditionExample (Ex. if else)
     conditionExample()
+    iterationOrLoopExample()
+}
+
+fun iterationOrLoopExample() {
+    println()
+    println("Start IterationOrLoopExample")
+    // ? While like Java
+    var amount = 2
+    while (amount-- > 0) { // ? 1 0
+        println("Amount left: $amount")
+    }
+    println()
+    // ? For / Repeat
+    amount = 2
+    repeat(amount) { a -> // ? 0 1
+        println("Repeat Current: $a")
+    } // ? trailing function (Functional Programming รับ function มาไป execute ต่อ)
+    println("---------------")
+
+    print("index i until  for (i in 0 until 10) :")
+    for (i in 0 until 10) {
+        // ? Range Expression (until) Ex. for (int i = 0; i <10; i++)
+        print(" $i")
+    }
+
+    println()
+    println("---------------")
+    print("index i ..  for (i in 0..10) :")
+    for (i in 0..10) {
+        // ? (..) Ex. for (int i = 0; i <= 10; i++) .. is include ตัวสุดท้าย
+        print(" $i")
+    }
+
+    println()
+    println("---------------")
+    print("index i downTo for (i in 10 downTo 0) :")
+    for (i in 10 downTo 0) {
+        // ? (downTo) Ex. for (int i = 10; i >= 0; i--)
+        print(" $i")
+    }
+
+    // ? more use step
+    println()
+    println("---------------")
+    print("index i downTo step 2 for (i in 10 downTo 0 step 2) :")
+    for (i in 10 downTo 0 step 2) {
+        // ? (downTo) Ex. for (int i = 10; i >= 0; i -= 2)
+        print(" $i")
+    }
+
+    println()
+    println("---------------")
+    print("index i .. step 2 for (i in 0..10 step 2) :")
+    for (i in 0..10 step 2) {
+        // ? (..) Ex. for (int i = 0; i >= 10; i += 2)
+        print(" $i")
+    }
+
+    println()
+    println("---------------")
+    print("index i until step 2  for (i in 0 until 10 step 2) :")
+    for (i in 0 until 10 step 2) {
+        // ? (until) Ex. for (int i = 0; i > 10; i += 2)
+        print(" $i")
+    }
 }
 
 fun conditionExample() {
@@ -39,10 +104,22 @@ fun conditionExample() {
         true -> println("Passed!")
         else -> println("Failed!")
     }
+    // ? Iterable Count (iterator)
+    var vowelCount = 0
+    val text = "ashdajsajd"
+    for (char in text) {
+        when (char) {
+            'a', 'e', 'i', 'o', 'u' -> ++vowelCount
+        }
+        // ? char.isLetter (Helper Extension)
+        // ? char.isDigit
+    }
+    println("VowelCount: ${vowelCount}")
 }
 
+
 fun checkScore(scores: Int): Boolean {
-    val result:Boolean = if (scores >= 50) {
+    val result: Boolean = if (scores >= 50) {
 //        println("Scored passed!")
         true
     } else if (scores < 50 && scores >= 0) {
