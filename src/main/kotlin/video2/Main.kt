@@ -42,16 +42,17 @@ fun conditionExample() {
 }
 
 fun checkScore(scores: Int): Boolean {
-    if (scores >= 50) {
+    val result:Boolean = if (scores >= 50) {
 //        println("Scored passed!")
-        return true
+        true
     } else if (scores < 50 && scores >= 0) {
 //        println("Failed!")
-        return false
+        false
     } else {
 //        println("Value is Negative")
-        return false
+        false
     }
+    return result
 }
 
 fun operatorExample() {
